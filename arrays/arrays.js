@@ -1,7 +1,7 @@
 //iterating an array ----------------------------
 console.log("iterating an array ------------------");
 
-numbers = [1,2,3];
+let numbers = [1,2,3];
 for (let number of numbers) console.log(number);
 
 numbers.forEach((number) => console.log(number));
@@ -135,10 +135,10 @@ console.log(items);
 
 //we can build a chain of methods:
 items = numbers
-.filter(n => n >=0)
-.map(n => ({value: n}))
-.filter(obj => obj.value > 1)
-.map(obj => obj.value);
+            .filter(n => n >=0)
+            .map(n => ({value: n}))
+            .filter(obj => obj.value > 1)
+            .map(obj => obj.value);
 
 console.log(items);
 

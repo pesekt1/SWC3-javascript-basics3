@@ -128,7 +128,7 @@ let person = {
     firstName: "Tomas",
     lastName: "Pesek",
     get fullName(){
-        return `${person.firstName} ${person.lastName}`
+        return `${this.firstName} ${this.lastName}`
     },
     set fullName(value){
         const parts = value.split(' ');
@@ -148,6 +148,8 @@ console.log("try and catch ----------------");
 //this will cause an error:
 //person.fullName = true;
 
+//here we are changing the FullName setter method:
+//we are adding input checks
 Object.defineProperty(
     person, 'fullName', 
     {set: function(value){
@@ -178,11 +180,13 @@ console.log("local vs global scope ----------------");
 
 {
     const message = "hi";
+    let message2 = "hi";
+    var message3 = "hi";
 }
 
 //console.log(message); //we get an error - not defined
-
-
+//console.log(message2); //we get an error - not defined
+//console.log(message); //this will work...
 
 
 //let vs var -----------------------
